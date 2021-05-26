@@ -350,7 +350,7 @@ public class BitbucketServerAPIClient implements BitbucketApi {
                     try {
                         pullRequest.setCanMerge(getPullRequestCanMergeById(pullRequest.getId()));
                     } catch (BitbucketRequestException e) {
-                        // see JENKINS-65718 https://docs.atlassian.com/bitbucket-server/rest/5.16.0/bitbucket-rest.html#errors-and-validation
+                        // see JENKINS-65718 https://docs.atlassian.com/bitbucket-server/rest/7.2.1/bitbucket-rest.html#errors-and-validation
                         // in this case we just say cannot merge this one
                         if(e.getHttpCode()==409){
                             pullRequest.setCanMerge(false);
